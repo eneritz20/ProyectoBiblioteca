@@ -1,4 +1,5 @@
 package modelo;
+import vista.Menu;
 
 public class Main {
 
