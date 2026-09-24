@@ -4,25 +4,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import src.Libro;
-import src.Pelicula;
-import src.Prestamo;
-import src.Recurso;
-import src.Usuario;
-import src.Videojuego;
+import modelo.Libro;
+import modelo.Pelicula;
+import modelo.Prestamo;
+import modelo.Recurso;
+import modelo.Usuario;
+import modelo.Videojuego;
 
-/**
- * Contiene las reglas de negocio de la biblioteca. Main solo debe pedir datos
- * al usuario y llamar a estos metodos.
- */
-public class BibliotecaService {
+
+//GENTE, REMINDER: ESTA CLASE SON SOLO LOS METODOS Q HACE TO LA BIBLIO, NO ES MAIN, NO ES EJECUTABLE
+
+public class Biblioteca {
 
     private final List<Usuario> usuarios = new ArrayList<Usuario>();
     private final List<Recurso> recursos = new ArrayList<Recurso>();
     private final List<Prestamo> prestamos = new ArrayList<Prestamo>();
 
     // -------------------- USUARIOS --------------------
-
+    
+//alta
     public void crearUsuario(int id, String nombre, String correo) {
         if (buscarUsuarioPorId(id) != null) {
             throw new IllegalArgumentException("Ya existe un usuario con ID " + id);
@@ -30,6 +30,7 @@ public class BibliotecaService {
         usuarios.add(new Usuario(id, nombre, correo));
     }
 
+  //buscar
     public Usuario buscarUsuarioPorId(int id) {
         for (Usuario usuario : usuarios) {
             if (usuario.getId() == id) {
@@ -39,10 +40,12 @@ public class BibliotecaService {
         return null;
     }
 
+    //listar all
     public List<Usuario> listarUsuarios() {
         return new ArrayList<Usuario>(usuarios);
     }
 
+  //editar
     public void modificarUsuario(int id, String nombre, String correo) {
         Usuario usuario = exigirUsuario(id);
         if (nombre != null && !nombre.trim().isEmpty()) {
@@ -53,6 +56,7 @@ public class BibliotecaService {
         }
     }
 
+    //eliminar
     public void eliminarUsuario(int id) {
         exigirUsuario(id);
         for (Prestamo prestamo : prestamos) {
@@ -66,6 +70,7 @@ public class BibliotecaService {
 
     // -------------------- RECURSOS --------------------
 
+  //alta
     public void crearRecurso(Recurso recurso) {
         if (recurso == null) {
             throw new IllegalArgumentException("El recurso no puede ser nulo");
@@ -76,6 +81,7 @@ public class BibliotecaService {
         recursos.add(recurso);
     }
 
+  //buscar
     public Recurso buscarRecursoPorId(int id) {
         for (Recurso recurso : recursos) {
             if (recurso.getId() == id) {
@@ -85,10 +91,12 @@ public class BibliotecaService {
         return null;
     }
 
+  //listar all
     public List<Recurso> listarRecursos() {
         return new ArrayList<Recurso>(recursos);
     }
 
+  //buscar
     public List<Recurso> buscarPorTitulo(String texto) {
         List<Recurso> resultado = new ArrayList<Recurso>();
         if (texto == null) {
@@ -103,7 +111,7 @@ public class BibliotecaService {
         return resultado;
     }
 
-    /** Modifica solo los campos que tengan un valor no vacio / distinto de null. */
+  //editar
     public void modificarRecurso(int id, String titulo, Date anio) {
         Recurso recurso = exigirRecurso(id);
         if (titulo != null && !titulo.trim().isEmpty()) {
@@ -114,6 +122,7 @@ public class BibliotecaService {
         }
     }
 
+  //editar
     public void modificarLibro(int id, String autor, Integer numPaginas) {
         Recurso recurso = exigirRecurso(id);
         if (!(recurso instanceof Libro)) {
@@ -128,6 +137,7 @@ public class BibliotecaService {
         }
     }
 
+  //editar
     public void modificarPelicula(int id, String director, Double duracion) {
         Recurso recurso = exigirRecurso(id);
         if (!(recurso instanceof Pelicula)) {
@@ -142,6 +152,7 @@ public class BibliotecaService {
         }
     }
 
+  //editar
     public void modificarVideojuego(int id, String plataforma, String pegi) {
         Recurso recurso = exigirRecurso(id);
         if (!(recurso instanceof Videojuego)) {
@@ -156,6 +167,7 @@ public class BibliotecaService {
         }
     }
 
+    //eliminar
     public void eliminarRecurso(int id) {
         Recurso recurso = exigirRecurso(id);
         if (!recurso.isEstado()) {
@@ -166,6 +178,7 @@ public class BibliotecaService {
 
     // -------------------- PRESTAMOS --------------------
 
+  //alta
     public void realizarPrestamo(int idUsuario, int idRecurso) {
         exigirUsuario(idUsuario);
         Recurso recurso = exigirRecurso(idRecurso);
@@ -178,6 +191,7 @@ public class BibliotecaService {
         recurso.setEstado(false);
     }
 
+    //busca recurso y si no tiene lanza mnsj, si no loo vuelve true "devuelto"
     public void devolverRecurso(int idRecurso) {
         Recurso recurso = exigirRecurso(idRecurso);
         Prestamo prestamo = buscarPrestamoActivoPorRecurso(idRecurso);
@@ -191,14 +205,17 @@ public class BibliotecaService {
 
     // -------------------- CONSULTAS --------------------
 
+  //listar all dispo
     public List<Recurso> recursosDisponibles() {
         return recursosPorEstado(true);
     }
 
+  //listar all no dispo
     public List<Recurso> recursosPrestados() {
         return recursosPorEstado(false);
     }
 
+  //listar all prrestamos usu
     public List<Prestamo> prestamosDeUsuario(int idUsuario) {
         exigirUsuario(idUsuario);
         List<Prestamo> resultado = new ArrayList<Prestamo>();
@@ -210,6 +227,7 @@ public class BibliotecaService {
         return resultado;
     }
 
+  //listar all prestamos
     public List<Prestamo> prestamosActivos() {
         List<Prestamo> resultado = new ArrayList<Prestamo>();
         for (Prestamo prestamo : prestamos) {
@@ -220,6 +238,7 @@ public class BibliotecaService {
         return resultado;
     }
 
+    //Recursos filtrados por tipo
     public List<Recurso> recursosPorTipo(String tipo) {
         List<Recurso> resultado = new ArrayList<Recurso>();
         for (Recurso recurso : recursos) {
@@ -232,7 +251,7 @@ public class BibliotecaService {
         return resultado;
     }
 
-    // Dos consultas adicionales del grupo: por anio y prestamos ya devueltos.
+    //Dos consultas adicionales decididas por el grupo.
     public List<Recurso> recursosPorAnio(Date anio) {
         List<Recurso> resultado = new ArrayList<Recurso>();
         for (Recurso recurso : recursos) {
