@@ -16,6 +16,7 @@ public class Pelicula extends Recurso {
 	public String getDirector() {
 		return director;
 	}
+	
 
 	public void setDirector(String director) {
 		this.director = director;
