@@ -89,10 +89,7 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 8. Fusionar y actualizar `main`.
 
 ### Ejemplos de commits válidos
-- `Añadida clase Usuario`  
-- `Implementado préstamo de recursos`  
-- `Corregida validación de identificadores`  
-- `Añadida lectura de recursos desde CSV`
+
 
 ### Issues creados
 - GitHub
