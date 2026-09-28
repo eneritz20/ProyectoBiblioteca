@@ -46,15 +46,7 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 - Actualizar estado del recurso automáticamente  
 
 ###  Consultas
-- Recursos disponibles  
-- Recursos prestados  
-- Búsqueda por título  
-- Préstamos activos  
-- Préstamos de un usuario  
-- Filtrar recursos por tipo  
-- **Dos consultas adicionales del grupo**, por ejemplo:  
-  - Recursos publicados antes de un año concreto  
-  - Recursos ordenados alfabéticamente  
+
 
 ###  Persistencia en ficheros
 - Carga automática de datos al iniciar  
