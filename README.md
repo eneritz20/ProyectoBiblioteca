@@ -47,7 +47,6 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 
 ###  Consultas
 
-
 ###  Persistencia en ficheros
 - Carga automática de datos al iniciar  
 - Guardado automático al cerrar  
