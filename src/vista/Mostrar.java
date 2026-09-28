@@ -50,6 +50,48 @@ public class Mostrar {
 	        System.out.println("========================================");
 	    }
 	
+	/*
+	 * metodo para mostrar todos los usuarios
+	 * 
+	 * Usuarios: 1
+	 * alta 1.1
+	 * buscar por id de 1 1   1.2
+	 * listar todos 1.3
+	 * editar 1.4
+	 * eliminar 1.5
+	 * 
+	 * Recursos: 2
+	 * alta 2.1
+	 * buscar por id 2.2
+	 * buscar por titulo 2.3
+	 * listar todos 2.4
+	 * editar recurso general (editar titulo y año) 2.5
+	 * editar libro  2.6
+	 * editar pelicula 2.7
+	 * editar videojuego 2.8
+	 * eliminar por id 2.9
+	 * 
+	 * Prestamos: 3
+	 * alta id usuario id recurso 3.1
+	 * buscar recurso (prestado o no) 3.2
+	 * 
+	 * 
+	 * Consultas: 4
+	 * listar todos los recursos disponibles 4.1
+	 * listar todos los recursos prestado 4.2
+	 * prestamos del usuario 4.3
+	 * prestamos de todos recursos prestados 4.4
+	 * filtrados por tipo 4.5 
+	 * Pelicula de mayor duración 4.6
+	 * Clasificar por pegis 4.7
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
 	
 	
 	public void mostrarUsuarios() {

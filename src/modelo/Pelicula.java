@@ -7,8 +7,8 @@ public class Pelicula extends Recurso {
 	private String director;
 	private double duracion;
 	
-	public Pelicula(int id, String titulo, Date año, boolean estado, String director, double duracion) {
-		super(id, titulo, año, estado);
+	public Pelicula(int id, String titulo, Date anioo, boolean estado, String director, double duracion) {
+		super(id, titulo, anioo, estado);
 		this.director = director;
 		this.duracion = duracion;
 	}

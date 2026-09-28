@@ -6,13 +6,13 @@ public abstract class Recurso {
 
     private int id;
     private String titulo;
-    private Date año;
+    private Date anio;
     private boolean estado;
 
-    public Recurso(int id, String titulo, Date año, boolean estado) {
+    public Recurso(int id, String titulo, Date anio, boolean estado) {
         this.id = id;
         this.titulo = titulo;
-        this.año = año;
+        this.anio =anio;
         this.estado = estado;
     }
 
@@ -28,12 +28,12 @@ public abstract class Recurso {
         this.titulo = titulo;
     }
 
-    public Date getAño() {
-        return año;
+    public Date getAnio() {
+        return anio;
     }
 
-    public void setAño(Date año) {
-        this.año = año;
+    public void setAnio(Date anio) {
+        this.anio = anio;
     }
 
     public boolean isEstado() {

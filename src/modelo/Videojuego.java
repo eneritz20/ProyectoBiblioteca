@@ -7,8 +7,8 @@ public class Videojuego extends Recurso {
 	private String plataforma;
 	private String pegi;
 
-	public Videojuego(int id, String titulo, Date año, boolean estado, String plataforma, String pegi) {
-		super(id, titulo, año, estado);
+	public Videojuego(int id, String titulo, Date anio, boolean estado, String plataforma, String pegi) {
+		super(id, titulo, anio, estado);
 		this.plataforma = plataforma;
 		this.pegi = pegi;
 	}
