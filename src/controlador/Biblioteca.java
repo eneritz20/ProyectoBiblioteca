@@ -207,7 +207,7 @@ public class Biblioteca {
 	}
 
 	// Comprobar que el usuario existe
-	private Usuario exigirUsuario(int id) {
+	public Usuario exigirUsuario(int id) {
 		Usuario usuario = buscarUsuarioPorId(id);
 		if (usuario == null) {
 			throw new IllegalArgumentException("No existe el usuario con ID " + id);
@@ -216,7 +216,7 @@ public class Biblioteca {
 	}
 
 	// Comprobar que el recurso existe
-	private Recurso exigirRecurso(int id) {
+	public Recurso exigirRecurso(int id) {
 		Recurso recurso = buscarRecursoPorId(id);
 		if (recurso == null) {
 			throw new IllegalArgumentException("No existe el recurso con ID " + id);
@@ -237,7 +237,7 @@ public class Biblioteca {
 	}
 
 	// este metodo lo uso para mostrar el listado d todos los dispos y prestados
-	private List<Recurso> recursosPorEstado(boolean disponible) {
+	public List<Recurso> recursosPorEstado(boolean disponible) {
 		List<Recurso> resultado = new ArrayList<Recurso>();
 
 		for (Recurso recurso : recursos) {
