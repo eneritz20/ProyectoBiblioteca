@@ -15,6 +15,9 @@ import modelo.Videojuego;
 
 public class Biblioteca {
 
+	private final List<Usuario> usuarios = new ArrayList<Usuario>();
+	private final List<Recurso> recursos = new ArrayList<Recurso>();
+	private final List<Prestamo> prestamos = new ArrayList<Prestamo>();
 	public final List<Usuario> usuarios = new ArrayList<Usuario>();
 	public final List<Recurso> recursos = new ArrayList<Recurso>();
 	public final List<Prestamo> prestamos = new ArrayList<Prestamo>();
@@ -207,6 +210,7 @@ public class Biblioteca {
 	}
 
 	// Comprobar que el usuario existe
+	private Usuario exigirUsuario(int id) {
 	public Usuario exigirUsuario(int id) {
 		Usuario usuario = buscarUsuarioPorId(id);
 		if (usuario == null) {
@@ -216,6 +220,7 @@ public class Biblioteca {
 	}
 
 	// Comprobar que el recurso existe
+	private Recurso exigirRecurso(int id) {
 	public Recurso exigirRecurso(int id) {
 		Recurso recurso = buscarRecursoPorId(id);
 		if (recurso == null) {
@@ -237,6 +242,7 @@ public class Biblioteca {
 	}
 
 	// este metodo lo uso para mostrar el listado d todos los dispos y prestados
+	private List<Recurso> recursosPorEstado(boolean disponible) {
 	public List<Recurso> recursosPorEstado(boolean disponible) {
 		List<Recurso> resultado = new ArrayList<Recurso>();
 
