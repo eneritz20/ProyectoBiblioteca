@@ -108,7 +108,7 @@ public class Biblioteca {
 			recurso.setTitulo(titulo);
 		}
 		if (anio != null) {
-			recurso.setAño(anio);
+			recurso.setAnio(anio);
 		}
 	}
 

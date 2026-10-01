@@ -58,5 +58,13 @@ public class Prestamo {
 	public void setFechaDevolucion(Date fechaDevolucion) {
 		FechaDevolucion = fechaDevolucion;
 	}
+	
+	@Override
+	public String toString() {
+		java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("dd/MM/yyyy");
+		String devolucion = (FechaDevolucion == null) ? "-" : formato.format(FechaDevolucion);
+		return "Usuario: " + usuario + " | Recurso: " + recurso + " | Préstamo: " + formato.format(fechaPrestamo)
+				+ " | Estado: " + estado + " | Devolución: " + devolucion;
+	}
 
 }

@@ -43,4 +43,11 @@ public abstract class Recurso {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+    
+    @Override
+    public String toString() {
+    	return "ID: " + id + " | Título: " + titulo + " | Año: " + new java.text.SimpleDateFormat("yyyy").format(anio)
+    			+ " | Estado: " + (estado ? "DISPONIBLE" : "PRESTADO");
+    }
+    
 }

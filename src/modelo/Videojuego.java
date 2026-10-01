@@ -29,4 +29,9 @@ public class Videojuego extends Recurso {
 		this.pegi = pegi;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " | Plataforma: " + plataforma + " | PEGI: " + pegi;
+	}
+
 }

@@ -92,8 +92,6 @@ public class Mostrar {
 		biblioteca.eliminarUsuario(idEliminarUsuario);
 	}
 
-	
-
 	// -------------------- RECURSOS --------------------
 
 	public void mostrarRecursos() {
@@ -120,21 +118,21 @@ public class Mostrar {
 			System.out.println("Introduce el numero de paginas");
 			int numPaginas = Integer.parseInt(teclado.nextLine());
 			// OJO: ajusta el orden de parametros al constructor de tu clase Libro
-			biblioteca.crearRecurso(new Libro(idRecurso, titulo, anio, autor, numPaginas));
+			biblioteca.crearRecurso(new Libro(idRecurso, titulo, anio, false, autor, numPaginas));
 		} else if (tipo == 2) {
 			System.out.println("Introduce el director");
 			String director = teclado.nextLine();
 			System.out.println("Introduce la duracion");
 			double duracion = Double.parseDouble(teclado.nextLine());
 			// OJO: ajusta el orden de parametros al constructor de tu clase Pelicula
-			biblioteca.crearRecurso(new Pelicula(idRecurso, titulo, anio, director, duracion));
+			biblioteca.crearRecurso(new Pelicula(idRecurso, titulo, anio, false, director, duracion));
 		} else if (tipo == 3) {
 			System.out.println("Introduce la plataforma");
 			String plataforma = teclado.nextLine();
 			System.out.println("Introduce el pegi");
 			String pegi = teclado.nextLine();
 			// OJO: ajusta el orden de parametros al constructor de tu clase Videojuego
-			biblioteca.crearRecurso(new Videojuego(idRecurso, titulo, anio, plataforma, pegi));
+			biblioteca.crearRecurso(new Videojuego(idRecurso, titulo, anio, false, plataforma, pegi));
 		} else {
 			System.out.println("Tipo no valido");
 		}
@@ -305,8 +303,6 @@ public class Mostrar {
 	}
 
 }
-
-
 
 /*
  * metodo para mostrar todos los usuarios

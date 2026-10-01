@@ -29,4 +29,9 @@ public class Libro extends Recurso {
 		this.numPaginas = numPaginas;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " | Autor: " + autor + " | Páginas: " + numPaginas;
+	}
+	
 }
