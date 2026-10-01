@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>git_ProyectoBiblioteca</name>
-	<name>ProyectoBiblioteca</name>
+	<name>src</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,7 +13,5 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-	</buildSpec>
-	<natures>
 	</natures>
 </projectDescription>
