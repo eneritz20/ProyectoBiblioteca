@@ -134,7 +134,7 @@ public class Main {
 				System.out.println("Error: debes introducir un numero");
 				teclado.nextLine(); // limpia lo que se ha escrito mal
 			} catch (NumberFormatException e) {
-				System.ut.println("Error: debes introducir un numero");
+				System.out.println("Error: debes introducir un numero");
 			
 			}
 
