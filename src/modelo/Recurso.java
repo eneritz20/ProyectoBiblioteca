@@ -1,22 +1,20 @@
 package modelo;
 
-import java.util.Date;
-
 public abstract class Recurso {
 
-    private int id;
+    private String id;
     private String titulo;
-    private Date anio;
-    private boolean estado;
+    private int anio;
+    private boolean disponible;
 
-    public Recurso(int id, String titulo, Date anio, boolean estado) {
+    public Recurso(String id, String titulo, int anio, boolean disponible) {
         this.id = id;
         this.titulo = titulo;
-        this.anio =anio;
-        this.estado = estado;
+        this.anio = anio;
+        this.disponible = disponible;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -24,23 +22,15 @@ public abstract class Recurso {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public Date getAnio() {
+    public int getAnio() {
         return anio;
     }
 
-    public void setAnio(Date anio) {
-        this.anio = anio;
+    public boolean isDisponible() {
+        return disponible;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 }

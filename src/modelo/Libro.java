@@ -1,32 +1,27 @@
 package modelo;
 
-import java.util.Date;
-
 public class Libro extends Recurso {
 
-	private String autor;
-	private int numPaginas;
+    private String autor;
+    private int paginas;
 
-	public Libro(int id, String titulo, Date anio, boolean estado, String autor, int numPaginas) {
-		super(id, titulo, anio, estado);
-		this.autor = autor;
-		this.numPaginas = numPaginas;
-	}
+    public Libro(String id, String titulo, int anio, String autor, int paginas) {
+        super(id, titulo, anio, true); // disponible por defecto
+        this.autor = autor;
+        this.paginas = paginas;
+    }
 
-	public String getAutor() {
-		return autor;
-	}
+    public String getAutor() {
+        return autor;
+    }
 
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
+    public int getPaginas() {
+        return paginas;
+    }
 
-	public int getNumPaginas() {
-		return numPaginas;
-	}
-
-	public void setNumPaginas(int numPaginas) {
-		this.numPaginas = numPaginas;
-	}
-
+    @Override
+    public String toString() {
+        return "Libro{id='" + getId() + "', titulo='" + getTitulo() + "', año=" + getAnio() +
+                ", disponible=" + isDisponible() + ", autor='" + autor + "', paginas=" + paginas + "}";
+    }
 }

@@ -1,39 +1,28 @@
 package modelo;
 
-import java.util.Date;
-
 public class Pelicula extends Recurso {
 
-	private String director;
-	private double duracion;
-	
-	public Pelicula(int id, String titulo, Date anioo, boolean estado, String director, double duracion) {
-		super(id, titulo, anioo, estado);
-		this.director = director;
-		this.duracion = duracion;
-	}
+    private String director;
+    private int duracionMinutos;
 
-	public String getDirector() {
-		return director;
-	}
-	
+    public Pelicula(String id, String titulo, int anio, String director, int duracionMinutos) {
+        super(id, titulo, anio, true);
+        this.director = director;
+        this.duracionMinutos = duracionMinutos;
+    }
 
-	public void setDirector(String director) {
-		this.director = director;
-	}
+    public String getDirector() {
+        return director;
+    }
 
-	public double getDuracion() {
-		return duracion;
-	}
+    public int getDuracionMinutos() {
+        return duracionMinutos;
+    }
 
-	public void setDuracion(double duracion) {
-		this.duracion = duracion;
-	}
-	
-	
-
-
-	
-	
-
+    @Override
+    public String toString() {
+        return "Pelicula{id='" + getId() + "', titulo='" + getTitulo() + "', año=" + getAnio() +
+                ", disponible=" + isDisponible() + ", director='" + director +
+                "', duración=" + duracionMinutos + " min}";
+    }
 }

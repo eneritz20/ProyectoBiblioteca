@@ -1,32 +1,28 @@
 package modelo;
 
-import java.util.Date;
-
 public class Videojuego extends Recurso {
 
-	private String plataforma;
-	private String pegi;
+    private String plataforma;
+    private String pegi;
 
-	public Videojuego(int id, String titulo, Date anio, boolean estado, String plataforma, String pegi) {
-		super(id, titulo, anio, estado);
-		this.plataforma = plataforma;
-		this.pegi = pegi;
-	}
+    public Videojuego(String id, String titulo, int anio, String plataforma, String pegi) {
+        super(id, titulo, anio, true);
+        this.plataforma = plataforma;
+        this.pegi = pegi;
+    }
 
-	public String getPlataforma() {
-		return plataforma;
-	}
+    public String getPlataforma() {
+        return plataforma;
+    }
 
-	public void setPlataforma(String plataforma) {
-		this.plataforma = plataforma;
-	}
+    public String getPegi() {
+        return pegi;
+    }
 
-	public String getPegi() {
-		return pegi;
-	}
-
-	public void setPegi(String pegi) {
-		this.pegi = pegi;
-	}
-
+    @Override
+    public String toString() {
+        return "Videojuego{id='" + getId() + "', titulo='" + getTitulo() + "', año=" + getAnio() +
+                ", disponible=" + isDisponible() + ", plataforma='" + plataforma +
+                "', pegi='" + pegi + "'}";
+    }
 }
