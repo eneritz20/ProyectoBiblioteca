@@ -1,6 +1,6 @@
 
-import com.biblioteca.modelo.Recurso;
-import com.biblioteca.modelo.Usuario;
+import modelo.Recurso;
+import modelo.Usuario;
 import java.util.List;
 
 public class ValidacionErrores{

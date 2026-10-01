@@ -4,6 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.Libro;
+import modelo.Pelicula;
+import modelo.Prestamo;
+import modelo.Recurso;
+import modelo.Usuario;
+import modelo.Videojuego;
+
 public class ficheros {
 private static final String FICHERO_USUARIOS = "usuarios.csv";
 private static final String FICHERO_RECURSOS = "recursos.csv";
