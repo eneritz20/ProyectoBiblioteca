@@ -1,6 +1,4 @@
 
-
-
 #  Biblioteca Multimedia – Práctica 1 (Git + Programación)  
 **ACCESO A DATOS – DAM2
 
@@ -45,7 +43,7 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 - Registrar devolución  
 - Actualizar estado del recurso automáticamente  
 
-###  Consultas
+
 
 ###  Persistencia en ficheros
 - Carga automática de datos al iniciar  
@@ -61,12 +59,39 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 
 
 ##  Estructura del proyecto
+src/
+ ├── controlador/
+ │    └── Biblioteca.java
+ ├── errores/
+ │    └── ValidacionErrores.java
+ ├── ficheros/
+ │    ├── ficheros.java
+ │    └── ficheros_eneritz/
+ ├── modelo/
+ │    ├── Libro.java
+ │    ├── Pelicula.java
+ │    ├── Prestamo.java
+ │    ├── Recurso.java
+ │    ├── Usuario.java
+ │    ├── Videojuego.java
+ │    └── Main.java
+ └── vista/
+      └── Mostrar.java
+
+Otros archivos:
+ .classpath  
+ .gitignore  
+ .project  
+ README.md  
 
 
 
 ##  Uso de Git y GitHub
 
 ### Ramas utilizadas
+- Ficheros/errores/reamde
+- controlador
+- Modelo/vista
 
 
 ### Flujo de trabajo aplicado
@@ -80,7 +105,11 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 8. Fusionar y actualizar `main`.
 
 ### Ejemplos de commits válidos
-
+- Errores añadidos al src
+- Vista final
+- Añadido mas metodos y corregidos
+- Metodos mejorados
+- Correcciones
 
 ### Issues creados
 - GitHub
@@ -97,6 +126,4 @@ La aplicación permite gestionar **usuarios**, **recursos multimedia** (libros, 
 - Agregar el repositorio de github a eclipse
 - Hacer los primeros commits y hacer push de cada rama
 - Hacer que los proyectos puedan crear clases .java
-
-
 

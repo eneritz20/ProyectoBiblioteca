@@ -4,6 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.Libro;
+import modelo.Pelicula;
+import modelo.Prestamo;
+import modelo.Recurso;
+import modelo.Usuario;
+import modelo.Videojuego;
+
 public class ficheros {
 private static final String FICHERO_USUARIOS = "usuarios.csv";
 private static final String FICHERO_RECURSOS = "recursos.csv";
@@ -20,20 +27,20 @@ try (PrintWriter pw = new PrintWriter(new FileWriter(FICHERO_RECURSOS))) {
 for (Recurso r : recursos) {
 if (r instanceof Libro) {
 Libro l = (Libro) r;
-pw.println("LIBRO;" + l.getId() + ";" + l.getTitulo() + ";" + l.getAno() + ";" + l.isDisponible() + ";" + l.getAutor() + ";" + l.getPaginas());
+pw.println("LIBRO;" + l.getId() + ";" + l.getTitulo() + ";" + l.getAnio() + ";" + l.isEstado() + ";" + l.getAutor() + ";" + l.getNumPaginas());
 } else if (r instanceof Pelicula) {
 Pelicula p = (Pelicula) r;
-pw.println("PELICULA;" + p.getId() + ";" + p.getTitulo() + ";" + p.getAno() + ";" + p.isDisponible() + ";" + p.getDirector() + ";" + p.getDuracionMinutos());
+pw.println("PELICULA;" + p.getId() + ";" + p.getTitulo() + ";" + p.getAnio() + ";" + p.isEstado() + ";" + p.getDirector() + ";" + p.getDuracion());
 } else if (r instanceof Videojuego) {
 Videojuego v = (Videojuego) r;
-pw.println("VIDEOJUEGO;" + v.getId() + ";" + v.getTitulo() + ";" + v.getAno() + ";" + v.isDisponible() + ";" + v.getPlataforma() + ";" + v.getPegi());
+pw.println("VIDEOJUEGO;" + v.getId() + ";" + v.getTitulo() + ";" + v.getAnio() + ";" + v.isEstado() + ";" + v.getPlataforma() + ";" + v.getPegi());
 }
 }
 } catch (IOException e) { System.out.println("Error al guardar recursos: " + e.getMessage()); }
 
 try (PrintWriter pw = new PrintWriter(new FileWriter(FICHERO_PRESTAMOS))) {
 for (Prestamo p : prestamos) {
-pw.println(p.getIdUsuario() + ";" + p.getIdRecurso() + ";" + p.getFechaPrestamo() + ";" + p.getFechaDevolucion() + ";" + p.isActivo());
+pw.println(p.getUsuario() + ";" + p.getRecurso() + ";" + p.getFechaPrestamo() + ";" + p.getFechaDevolucion() + ";" + p.getEstado());
 }
 } catch (IOException e) { System.out.println("Error al guardar préstamos: " + e.getMessage()); }
 }
